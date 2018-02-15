@@ -7,6 +7,7 @@
 #include "SphereCollider.h"
 #include "GameObject.h"
 #include "AntTweakBar\AntTweakBar.h"
+#include "VoxelLevelLoader.h"
 
 class Simulation
 {
@@ -16,8 +17,16 @@ public:
 
 	void Update();
 	void Draw();
+
+	void InitiateHairSimulation();
+	void DrawHair();
+	void UpdateHair();
+	void DestroyHair();
+
 private:
 	Camera* camera;
+	
+	VoxelLevelLoader loader;
 
 	std::vector<Shader*> shaders;
 	std::vector<GameObject*> gameObjects;

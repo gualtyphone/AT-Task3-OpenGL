@@ -10,12 +10,54 @@
 #include "Lighting.h"
 
 #include "AntTweakBar\AntTweakBar.h"
-//This is the start for the simulation code which will all be platform independent because we hide all the platform
-//specific code in main and the equivalent of the GLUT that i'll write
 
-//We cannot use normal main because that will override WinMain loading
-//Fake starting point
 Simulation::Simulation()
+{
+	camera = new Camera(Vector3(0, 0, -30), 1.0f, (float)800 / (float)600, 0.01f, 1000.0f);
+	shaders.push_back(new Shader(std::string("./resources/shaders/basicShader"), camera));
+
+	gameObjects.push_back(new GameObject("Monkey",
+						  Transform(Vector3(-5, 0, 20), Vector3(0, 0, 0), Vector3(1, 1, 1)),
+						  new Model("./resources/models/monkey3.obj"),
+						  nullptr, shaders[0],
+						  new Texture("./resources/textures/bricks.jpg", "texture_diffuse")));
+
+	
+	loader.Start("./resources/textures/SimpleLevel/SimpleLevel.png", shaders[0], new Texture("./resources/textures/texture_atlas.png", "texture_diffuse"));
+
+	//InitiateHairSimulation();
+}
+
+Simulation::~Simulation()
+{
+	//DestroyHair();
+}
+
+void Simulation::Update()
+{
+	camera->Update();
+
+	for each (auto& go in gameObjects)
+	{
+		go->Update();
+	}
+	//UpdateHair();
+}
+
+void Simulation::Draw()
+{
+	shaders[0]->Bind();
+	for each (auto& go in gameObjects)
+	{
+		go->Draw();
+	}
+
+	loader.Draw();
+
+	//DrawHair();
+}
+
+void Simulation::InitiateHairSimulation()
 {
 	TwInit(TW_OPENGL, NULL);
 
@@ -34,16 +76,8 @@ Simulation::Simulation()
 	TwAddSeparator(mainBar, NULL, "");
 	TwAddVarRW(mainBar, "Draw Colliders", TW_TYPE_BOOL8, &showColliders, "");
 
-	camera = new Camera(Vector3(0, 0, -30), 1.0f, (float)800 / (float)600, 0.01f, 1000.0f);
-	shaders.push_back(new Shader(std::string("./resources/shaders/basicShader"), camera));
+
 	shaders.push_back(new Shader(std::string("./resources/shaders/instancedHairShader"), camera));
-
-
-	gameObjects.push_back(new GameObject("Monkey",
-						  Transform(Vector3(-5, 0, 20), Vector3(0, 0, 0), Vector3(1, 1, 1)),
-						  new Model("./resources/models/monkey3.obj"),
-						  nullptr, shaders[0],
-						  new Texture("./resources/textures/bricks.jpg", "texture_diffuse")));
 
 	gameObjects.push_back(new GameObject("TheRock",
 						  Transform(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(.1f, .1f, .1f)),
@@ -137,19 +171,25 @@ Simulation::Simulation()
 	}
 }
 
-Simulation::~Simulation()
+void Simulation::DrawHair()
 {
-	TwTerminate();
+
+	if (showColliders)
+	{
+
+		for (int i = 0; i < colliders.size(); i++)
+		{
+			shaders[0]->Update(colliders[i].parent->Get() * colliders[i].transform.Get());
+			colliders[i].draw();
+		}
+
+	}
+
+	TwDraw();
 }
 
-void Simulation::Update()
+void Simulation::UpdateHair()
 {
-	camera->Update();
-
-	for each (auto& go in gameObjects)
-	{
-		go->Update();
-	}
 
 	if (Input::GetKey(KeyCode::U))
 	{
@@ -217,24 +257,9 @@ void Simulation::Update()
 	}
 }
 
-void Simulation::Draw()
+void Simulation::DestroyHair()
 {
-	shaders[0]->Bind();
-	for each (auto& go in gameObjects)
-	{
-		go->Draw();
-	}
-
-	if (showColliders)
-	{
-
-		for (int i = 0; i < colliders.size(); i++)
-		{
-			shaders[0]->Update(colliders[i].parent->Get() * colliders[i].transform.Get() );
-			colliders[i].draw();
-		}
-
-	}
-
-	TwDraw();
+	TwTerminate();
 }
+
+

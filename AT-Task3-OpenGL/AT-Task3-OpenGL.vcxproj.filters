@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CylinderCollider.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FTL.cpp">
+      <Filter>Hair\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="HairyModel.cpp">
+      <Filter>Hair\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="guicon.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.c">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="GMath.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Lighting.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulation.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereCollider.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeMeshData.cpp">
+      <Filter>Voxels\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VoxelTextureAtlas.cpp">
+      <Filter>Voxels\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VoxelRenderer.cpp">
+      <Filter>Voxels\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PerlinNoise.cpp">
+      <Filter>Engine\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FTL.h">
+      <Filter>Hair\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="HairyModel.h">
+      <Filter>Hair\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="guicon.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereCollider.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Lighting.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GMath.h">
+      <Filter>Engine\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Engine\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Engine\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeMeshData.h">
+      <Filter>Voxels\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelData.h">
+      <Filter>Voxels\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelLevelLoader.h">
+      <Filter>Voxels\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelRenderer.h">
+      <Filter>Voxels\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelTextureData.h">
+      <Filter>Voxels\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CylinderCollider.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PerlinNoise.h">
+      <Filter>Engine\Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\shaders\basicShader.fs">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\basicShader.vs">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\instancedHairShader.fs">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+    <None Include="resources\shaders\instancedHairShader.vs">
+      <Filter>Resources\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{f8418a95-356c-4425-a040-32ca14d97cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{100b2f6d-2751-4f15-bddd-da35ec9b3bc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hair">
+      <UniqueIdentifier>{22cc7bfc-bbc7-408b-aee3-18751c8e5a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hair\Source">
+      <UniqueIdentifier>{8fb464c8-0960-46ef-b71f-e28943b51a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hair\Header">
+      <UniqueIdentifier>{fb2056aa-7360-47a5-bc11-a1a99a103d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{82f91a15-19fe-409d-9f6c-9fd8c3d47bfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Shaders">
+      <UniqueIdentifier>{d19c89da-2fd4-444f-954d-f25ab9949c9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{bf1df785-b19d-4e06-8f0a-13c3bb8f291b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Header">
+      <UniqueIdentifier>{22e1c22c-26d8-4494-8689-730336cf7eca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Source">
+      <UniqueIdentifier>{c2b1b6d0-d319-4aee-849f-eb7045ed368e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxels">
+      <UniqueIdentifier>{21e96676-6ef3-4e18-b9af-53416ee904ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxels\Header">
+      <UniqueIdentifier>{ea6d9f01-a56a-4d70-b390-5392ca676753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxels\Source">
+      <UniqueIdentifier>{8964c00c-c7b2-4c8e-aca1-da72ad425c01}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

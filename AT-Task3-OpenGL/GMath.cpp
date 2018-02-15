@@ -20,6 +20,23 @@ Vector3::~Vector3()
 {
 
 }
+
+Vector3Int::Vector3Int()
+{
+	x = 0;
+	y = 0;
+	z = 0;
+}
+Vector3Int::Vector3Int(int _x = 0, int _y = 0, int _z = 0)
+{
+	x = _x;
+	y = _y;
+	z = _z;
+}
+Vector3Int::~Vector3Int()
+{
+
+}
 #pragma endregion
 
 

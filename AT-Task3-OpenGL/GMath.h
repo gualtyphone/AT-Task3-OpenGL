@@ -6,6 +6,7 @@ namespace GMath
 	class Matrix4;
 	class Vector4;
 	class Vector3;
+	class Vector3Int;
 	class Vector2;
 	class Quaternion;
 
@@ -31,6 +32,23 @@ namespace GMath
 		inline float const GetW() const
 		{
 			return w;
+		}
+
+		inline float magnitude() const
+		{
+			return sqrtf(x*x + y * y + z * z + w*w );
+		}
+
+		//add two vectors
+		Vector4 operator+(const Vector4 &vec) const
+		{
+			return Vector4(x + vec.x, y + vec.y, z + vec.z, w + vec.w);
+		}
+
+		//add two vectors
+		Vector4 operator-(const Vector4 &vec) const
+		{
+			return Vector4(x - vec.x, y - vec.y, z - vec.z, w - vec.w);
 		}
 
 	protected:
@@ -64,7 +82,7 @@ namespace GMath
 
 		inline float magnitude() const
 		{
-			return sqrt(x*x + y*y + z*z);
+			return sqrtf(x*x + y*y + z*z);
 		}
 
 		//add two vectors
@@ -153,6 +171,117 @@ namespace GMath
 		float z;
 	};
 
+	class Vector3Int
+	{
+	public:
+		Vector3Int();
+		Vector3Int(int _x, int _y, int _z);
+		~Vector3Int();
+
+		inline int const GetX() const
+		{
+			return x;
+		}
+		inline int const GetY() const
+		{
+			return y;
+		}
+		inline int const GetZ() const
+		{
+			return z;
+		}
+
+		inline int magnitude() const
+		{
+			return (int)sqrt(x*x + y * y + z * z);
+		}
+
+		//add two vectors
+		Vector3Int operator+(const Vector3Int &vec) const
+		{
+			return Vector3Int(x + vec.x, y + vec.y, z + vec.z);
+		}
+
+		//Multiply
+		Vector3Int operator*(const Vector3Int &vec) const
+		{
+			return Vector3Int(x * vec.x, y * vec.y, z * vec.z);
+		}
+
+		//Multiply
+		Vector3Int operator*(const int &ot) const
+		{
+			return Vector3Int(x * ot, y * ot, z * ot);
+		}
+
+		//Divide
+		Vector3Int operator/(const int &ot) const
+		{
+			return Vector3Int(x / ot, y / ot, z / ot);
+		}
+
+		//subtract two vector
+		Vector3Int operator-(const Vector3Int &vec) const
+		{
+			return Vector3Int(x - vec.x, y - vec.y, z - vec.z);
+		}
+
+		bool operator==(const Vector3Int &vec) const
+		{
+			return x == vec.x && y == vec.y && z == vec.z;
+		}
+
+		//normalize this vector
+		void normalize()
+		{
+			int magnitude = (int)sqrt(x * x + y * y + z * z);
+			x /= magnitude;
+			y /= magnitude;
+			z /= magnitude;
+		}
+
+		static Vector3Int normalize(Vector3Int &vec)
+		{
+			int magnitude = (int)sqrtf(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
+
+			return Vector3Int(vec.x / magnitude, vec.y / magnitude, vec.z / magnitude);
+		}
+
+		//calculate and return dot product
+		int dot(const Vector3Int &vec) const
+		{
+			return x * vec.x + y * vec.y + z * vec.z;
+		}
+
+		//calculate and return cross product
+		Vector3Int cross(const Vector3Int &vec) const
+		{
+			return Vector3Int(y * vec.z - z * vec.y,
+						   z * vec.x - x * vec.z,
+						   x * vec.y - y * vec.x);
+		}
+
+		//calculate and return dot product
+		static int dot(const Vector3Int &a, const Vector3Int &b)
+		{
+			return a.x * b.x + a.y * b.y + a.z * b.z;
+		}
+
+		//calculate and return cross product
+		static Vector3Int cross(const Vector3Int &a, const Vector3Int &b)
+		{
+			return Vector3Int(a.y * b.z - a.z * b.y,
+						   a.z * b.x - a.x * b.z,
+						   a.x * b.y - a.y * b.x);
+		}
+
+	protected:
+	private:
+		int x;
+		int y;
+		int z;
+	};
+
 	class Vector2
 	{
 	public:
@@ -161,6 +290,11 @@ namespace GMath
 		~Vector2();
 		float x;
 		float y;
+
+		Vector2 operator+(const Vector2 &vec) const
+		{
+			return Vector2(x + vec.x, y + vec.y);
+		}
 
 		Vector2 operator-(const Vector2 &vec) const
 		{

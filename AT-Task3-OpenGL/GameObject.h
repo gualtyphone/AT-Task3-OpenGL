@@ -19,8 +19,7 @@ public:
 
 	inline Transform* GetTransform() { return &transform; }
 protected:
-private:
-	std::string name = "GameObject";
+	std::string name;
 	Transform transform;
 	Model* model = nullptr;
 	Mesh* mesh = nullptr;

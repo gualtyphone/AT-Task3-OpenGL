@@ -123,6 +123,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CubeMeshData.cpp" />
     <ClCompile Include="CylinderCollider.cpp" />
     <ClCompile Include="FTL.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PerlinNoise.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Simulation.cpp" />
     <ClCompile Include="SphereCollider.cpp" />
@@ -141,9 +143,12 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="GMath.cpp" />
     <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="VoxelRenderer.cpp" />
+    <ClCompile Include="VoxelTextureAtlas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CubeMeshData.h" />
     <ClInclude Include="CylinderCollider.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="FTL.h" />
@@ -154,6 +159,7 @@
     <ClInclude Include="Lighting.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="PerlinNoise.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Simulation.h" />
@@ -162,6 +168,10 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="GMath.h" />
     <ClInclude Include="Transform.h" />
+    <ClInclude Include="VoxelData.h" />
+    <ClInclude Include="VoxelLevelLoader.h" />
+    <ClInclude Include="VoxelRenderer.h" />
+    <ClInclude Include="VoxelTextureData.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\shaders\basicShader.fs" />

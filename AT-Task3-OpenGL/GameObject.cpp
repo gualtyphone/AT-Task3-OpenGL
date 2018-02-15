@@ -38,7 +38,7 @@ void GameObject::Update()
 void GameObject::Draw()
 {
 	if (shader != nullptr)
-	{		
+	{
 		shader->Bind();
 		transform.Update();
 		shader->Update(transform, *Lighting::GetLight());
