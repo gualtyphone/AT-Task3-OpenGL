@@ -1,4 +1,4 @@
-#ifndef ROXLU_FTL_H
+﻿#ifndef ROXLU_FTL_H
 #define ROXLU_FTL_H
 
 #include "GMath.h"
