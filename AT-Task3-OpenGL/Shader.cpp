@@ -66,6 +66,7 @@ void Shader::Update(const Transform & transform, const Camera & cam, const  Vect
 	glUseProgram(m_program);
 	Matrix4 m = camera->GetVewProjection() * transform.Get();
 	glUniformMatrix4fv(m_uniforms[0], 1, GL_TRUE, &(m.Get()[0]));
+	//lightDir = lightDir
 	glUniform3f(m_uniforms[1], lightDir.GetX(), lightDir.GetY(), lightDir.GetZ());
 }
 

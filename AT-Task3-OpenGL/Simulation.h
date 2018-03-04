@@ -26,7 +26,7 @@ public:
 private:
 	Camera* camera;
 	
-	VoxelLevelLoader loader;
+	VoxelLevelLoader* loader;
 
 	std::vector<Shader*> shaders;
 	std::vector<GameObject*> gameObjects;

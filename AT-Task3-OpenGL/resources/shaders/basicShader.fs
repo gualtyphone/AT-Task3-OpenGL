@@ -5,6 +5,7 @@ varying vec3 normal0;
 
 uniform sampler2D diffuse;
 uniform vec3 lightDirection;
+//uniform mat4 transform;
 
 void main()
 {

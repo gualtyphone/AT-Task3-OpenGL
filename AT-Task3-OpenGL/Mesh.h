@@ -43,7 +43,7 @@ private:
 class Mesh
 {
 public:
-	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
+	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, bool calculateNormals = false);
 	//Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
 	virtual ~Mesh();
 

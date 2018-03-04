@@ -13,55 +13,10 @@
 
 Simulation::Simulation()
 {
-	camera = new Camera(Vector3(0, 0, -30), 1.0f, (float)800 / (float)600, 0.01f, 1000.0f);
-	shaders.push_back(new Shader(std::string("./resources/shaders/basicShader"), camera));
-
-	gameObjects.push_back(new GameObject("Monkey",
-						  Transform(Vector3(-5, 0, 20), Vector3(0, 0, 0), Vector3(1, 1, 1)),
-						  new Model("./resources/models/monkey3.obj"),
-						  nullptr, shaders[0],
-						  new Texture("./resources/textures/bricks.jpg", "texture_diffuse")));
-
-	
-	loader.Start("./resources/textures/SimpleLevel/SimpleLevel.png", shaders[0], new Texture("./resources/textures/texture_atlas.png", "texture_diffuse"));
-
-	//InitiateHairSimulation();
-}
-
-Simulation::~Simulation()
-{
-	//DestroyHair();
-}
-
-void Simulation::Update()
-{
-	camera->Update();
-
-	for each (auto& go in gameObjects)
-	{
-		go->Update();
-	}
-	//UpdateHair();
-}
-
-void Simulation::Draw()
-{
-	shaders[0]->Bind();
-	for each (auto& go in gameObjects)
-	{
-		go->Draw();
-	}
-
-	loader.Draw();
-
-	//DrawHair();
-}
-
-void Simulation::InitiateHairSimulation()
-{
 	TwInit(TW_OPENGL, NULL);
 
 	TwWindowSize(Display::getDisplay()->GetSize().x, Display::getDisplay()->GetSize().y);
+
 
 	mainBar = TwNewBar("Controls");
 	TwAddVarRW(mainBar, "Enable Wind", TW_TYPE_BOOL8, &enableWind, "");
@@ -75,6 +30,60 @@ void Simulation::InitiateHairSimulation()
 	TwAddVarRW(mainBar, "Light Direction", TW_TYPE_DIR3F, Lighting::GetLight(), "");
 	TwAddSeparator(mainBar, NULL, "");
 	TwAddVarRW(mainBar, "Draw Colliders", TW_TYPE_BOOL8, &showColliders, "");
+
+	camera = new Camera(Vector3(0, 0, -30), 1.0f, (float)800 / (float)600, 0.01f, 1000.0f);
+	shaders.push_back(new Shader(std::string("./resources/shaders/basicShader"), camera));
+
+	gameObjects.push_back(new GameObject("Monkey",
+						  Transform(Vector3(-5, 0, 20), Vector3(0, 0, 0), Vector3(1, 1, 1)),
+						  new Model("./resources/models/monkey3.obj"),
+						  nullptr, shaders[0],
+						  new Texture("./resources/textures/bricks.jpg", "texture_diffuse")));
+
+	
+	loader = new VoxelLevelLoader("./resources/textures/SimpleLevel/SimpleLevel.png", shaders[0], new Texture("./resources/textures/texture_atlas.png", "texture_diffuse"));
+
+	//InitiateHairSimulation();
+}
+
+Simulation::~Simulation()
+{
+	//DestroyHair();
+	TwTerminate();
+}
+
+void Simulation::Update()
+{
+	camera->Update();
+
+	for each (auto& go in gameObjects)
+	{
+		go->Update();
+	}
+
+	loader->Update();
+
+	//UpdateHair();
+}
+
+void Simulation::Draw()
+{
+	shaders[0]->Bind();
+	for each (auto& go in gameObjects)
+	{
+		go->Draw();
+	}
+
+	loader->Draw();
+
+	TwDraw();
+	//DrawHair();
+}
+
+void Simulation::InitiateHairSimulation()
+{
+	
+
 
 
 	shaders.push_back(new Shader(std::string("./resources/shaders/instancedHairShader"), camera));
@@ -185,7 +194,7 @@ void Simulation::DrawHair()
 
 	}
 
-	TwDraw();
+	
 }
 
 void Simulation::UpdateHair()
@@ -259,7 +268,6 @@ void Simulation::UpdateHair()
 
 void Simulation::DestroyHair()
 {
-	TwTerminate();
 }
 
 

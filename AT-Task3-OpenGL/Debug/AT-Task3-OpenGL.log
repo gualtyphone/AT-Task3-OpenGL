@@ -1,25 +1,6 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HairSimulation-OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Simulation.cpp
+  Mesh.cpp
 c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\gmath.h(245): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxeldata.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxelrenderer.h(106): warning C4018: '<': signed/unsigned mismatch
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(58): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(78): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(124): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(193): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(222): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(223): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxellevelloader.h(242): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\simulation.cpp(64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\simulation.cpp(162): warning C4018: '<': signed/unsigned mismatch
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\simulation.cpp(180): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  main.cpp
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\mesh.cpp(21): warning C4018: '<': signed/unsigned mismatch
+  stb_image.c
   AT-Task3-OpenGL.vcxproj -> C:\Users\Gualty\Desktop\AT-Task3-OpenGL\Debug\AT-Task3-OpenGL.exe

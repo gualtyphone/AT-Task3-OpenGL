@@ -1,6 +1,6 @@
 #pragma once
-#include <math.h>
-#include <assert.h>
+#include <cmath>
+#include <cassert>
 namespace GMath
 {
 	class Matrix4;
@@ -299,6 +299,11 @@ namespace GMath
 		Vector2 operator-(const Vector2 &vec) const
 		{
 			return Vector2(x - vec.x, y - vec.y);
+		}
+
+		inline float magnitude() const
+		{
+			return sqrtf(x*x + y * y);
 		}
 	protected:
 	private:

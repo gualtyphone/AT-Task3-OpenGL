@@ -1,5 +1,5 @@
 #include "FTL.h"
-#include <math.h>
+#include <cmath>
 #include "GL\glew.h"
 #include "Random.h"
 #include "Input.h"
@@ -182,7 +182,7 @@ namespace ftl
 		// solve constraints
 		GMath::Vector3 dir;
 		GMath::Vector3 curr_pos;
-		for (size_t i = 1; i < particles.size(); ++i)
+		for (std::size_t i = 1; i < particles.size(); ++i)
 		{
 			Particle* pa = particles[i - 1];
 			Particle* pb = particles[i];
@@ -193,7 +193,7 @@ namespace ftl
 			pb->d = curr_pos - pb->tmp_position; //  - curr_pos;
 		}
 
-		for (size_t i = 1; i < particles.size(); ++i)
+		for (std::size_t i = 1; i < particles.size(); ++i)
 		{
 			Particle* pa = particles[i - 1];
 			Particle* pb = particles[i];

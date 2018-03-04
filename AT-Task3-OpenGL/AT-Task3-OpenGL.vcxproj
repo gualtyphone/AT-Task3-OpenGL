@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C595760F-D160-4295-90BD-4DB9BF97F4E8}</ProjectGuid>
     <RootNamespace>HairSimulationOpenGL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectName>AT-Task3-OpenGL</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -130,6 +130,8 @@
     <ClCompile Include="guicon.cpp" />
     <ClCompile Include="HairyModel.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="LevelExpander.cpp" />
+    <ClCompile Include="LevelExpanderRotation.cpp" />
     <ClCompile Include="Lighting.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Display.cpp" />
@@ -143,10 +145,12 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="GMath.cpp" />
     <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="VoxelLevelLoader.cpp" />
     <ClCompile Include="VoxelRenderer.cpp" />
     <ClCompile Include="VoxelTextureAtlas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LevelExpander.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CubeMeshData.h" />
     <ClInclude Include="CylinderCollider.h" />
@@ -156,6 +160,7 @@
     <ClInclude Include="guicon.h" />
     <ClInclude Include="HairyModel.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="LevelExpanderRotation.h" />
     <ClInclude Include="Lighting.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />

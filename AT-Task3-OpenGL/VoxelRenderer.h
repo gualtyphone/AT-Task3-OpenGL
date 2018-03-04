@@ -13,6 +13,7 @@ class VoxelRender : public GameObject
 public:
 
 	std::vector<Vector3>* vertices;
+	std::vector<Vector3>* normals;
 	std::vector<unsigned int>* triangles;
 	std::vector<Vector2>* UVs;
 
@@ -38,6 +39,7 @@ public:
 	void GenerateVoxelMesh()
 	{
 		vertices = new std::vector<Vector3>();
+		normals = new std::vector<Vector3>();
 		triangles = new std::vector<unsigned int>();
 		UVs = new std::vector<Vector2>();
 
@@ -75,6 +77,10 @@ public:
 			vertices->push_back(vert);
 		}
 		
+		for each(auto norm in CubeMeshData::faceNormals(dir))
+		{
+			normals->push_back(norm);
+		}
 		
 		UVs->push_back(VoxelTextureAtlas::getUVs(cubeType, 0));
 		UVs->push_back(VoxelTextureAtlas::getUVs(cubeType, 1));
@@ -105,7 +111,7 @@ public:
 
 			for (int i = 0; i < vertices->size(); i++)
 			{
-				verts.push_back(Vertex((*vertices)[i], (*UVs)[i]));
+				verts.push_back(Vertex((*vertices)[i], (*UVs)[i], (*normals)[i]));
 			}
 
 			mesh = new Mesh(verts, (*triangles));

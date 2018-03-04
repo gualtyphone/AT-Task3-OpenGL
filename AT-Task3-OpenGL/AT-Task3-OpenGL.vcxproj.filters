@@ -70,6 +70,15 @@
     <ClCompile Include="PerlinNoise.cpp">
       <Filter>Engine\Source</Filter>
     </ClCompile>
+    <ClCompile Include="VoxelLevelLoader.cpp">
+      <Filter>Voxels\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelExpander.cpp">
+      <Filter>Voxels\Expanders\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelExpanderRotation.cpp">
+      <Filter>Voxels\Expanders\Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FTL.h">
@@ -147,6 +156,12 @@
     <ClInclude Include="PerlinNoise.h">
       <Filter>Engine\Header</Filter>
     </ClInclude>
+    <ClInclude Include="LevelExpander.h">
+      <Filter>Voxels\Expanders\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelExpanderRotation.h">
+      <Filter>Voxels\Expanders\Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\shaders\basicShader.fs">
@@ -201,6 +216,15 @@
     </Filter>
     <Filter Include="Voxels\Source">
       <UniqueIdentifier>{8964c00c-c7b2-4c8e-aca1-da72ad425c01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxels\Expanders">
+      <UniqueIdentifier>{b3e86456-462c-4df1-8716-468f7abc56cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxels\Expanders\Source">
+      <UniqueIdentifier>{0fe47d4d-94b7-41b2-b867-8742272dc6e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Voxels\Expanders\Header">
+      <UniqueIdentifier>{198051d5-f010-4f97-9de6-abceadb871f7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
