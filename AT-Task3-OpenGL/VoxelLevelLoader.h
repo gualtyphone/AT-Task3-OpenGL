@@ -50,8 +50,27 @@ public:
 	void setBlock(Vector3 pos, int blockType);
 	int getBlock(Vector3 pos);
 
+	int getFloorLevel(int x, int z);
+
+	inline void clearMesh()
+	{
+		for (int i = 0; i < chunks.size(); i++)
+		{
+			for (int x = 0; x < chunks[i]->width; x++)
+			{
+				for (int y = 0; y < chunks[i]->height; y++)
+				{
+					for (int z = 0; z < chunks[i]->depth; z++)
+					{
+						chunks[i]->SetCell(Vector3Int(x, y, z), 0);
+					}
+				}
+			}
+		}
+	}
+
 public:
-	TwBar * voxelBar;
+	//TwBar * voxelBar;
 
 	unsigned char* pixels;
 	int texWidth;

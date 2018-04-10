@@ -15,6 +15,8 @@ using namespace std;
 #endif
 #include "guicon.h"
 #include <crtdbg.h>
+#include <random>
+#include <time.h>
 
 #pragma comment(lib, "opengl32.lib")
 #pragma comment(lib, "glu32.lib")
@@ -26,6 +28,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine
 	#ifdef _DEBUG
 	RedirectIOToConsole();
 	#endif
+
+	srand(time(NULL));
 
 	//// test CrtDbg output
 	_CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_FILE);

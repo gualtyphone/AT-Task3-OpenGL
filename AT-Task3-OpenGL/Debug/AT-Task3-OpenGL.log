@@ -1,6 +1,29 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (HairSimulation-OpenGL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Mesh.cpp
+  LevelExpanderRotation.cpp
 c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\gmath.h(245): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\mesh.cpp(21): warning C4018: '<': signed/unsigned mismatch
-  stb_image.c
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxeldata.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\voxelrenderer.h(112): warning C4018: '<': signed/unsigned mismatch
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.h(36): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.h(37): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.h(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.h(55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.h(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.h(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(78): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(87): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(113): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(136): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(139): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(190): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(216): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(265): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(283): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(289): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(289): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(297): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(299): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\gualty\desktop\at-task3-opengl\at-task3-opengl\levelexpanderrotation.cpp(127): warning C4715: 'LevelExpanderRotation::GetSurfaceBlock': not all control paths return a value
   AT-Task3-OpenGL.vcxproj -> C:\Users\Gualty\Desktop\AT-Task3-OpenGL\Debug\AT-Task3-OpenGL.exe

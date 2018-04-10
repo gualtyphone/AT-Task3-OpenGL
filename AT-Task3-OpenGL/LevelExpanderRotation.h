@@ -4,13 +4,24 @@
 
 class VoxelLevelLoader;
 
+class PixelBlock
+{
+public:
+	PixelBlock(Vector2 _pix, int _btp)
+	{
+		pix = _pix; blockType = _btp;
+	}
+	Vector2 pix;
+	int blockType;
+};
+
 class Structure
 {
 public:
 	int minx, miny;
 	int maxx, maxy;
 
-	std::vector<Vector2> pixels;
+	std::vector<PixelBlock> pixels;
 
 	Structure(int x, int y)
 	{
@@ -27,7 +38,7 @@ public:
 			
 		float d = (Vector2(cx, cy) - Vector2(px, py)).magnitude();
 
-		return (d < 5);
+		return (d < 20);
 
 	}
 
@@ -37,6 +48,21 @@ public:
 		miny = min(miny, py);
 		maxx = max(maxx, px);
 		maxy = max(maxy, py);
+	}
+
+	inline Vector3 center3D()
+	{
+		return Vector3(minx + ((maxx - minx) / 2), maxy, minx + ((maxx - minx) / 2));
+	}
+	inline Vector2 center2D()
+	{
+		return Vector2(minx + ((maxx - minx) / 2), maxy);
+
+	}
+
+	inline Vector3 size()
+	{
+		return Vector3(maxx - minx, maxy - miny, maxx - minx);
 	}
 private:
 };

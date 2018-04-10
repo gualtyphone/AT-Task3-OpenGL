@@ -12,7 +12,7 @@ void LevelExpanderRotation::BeginTransform()
 {
 	//LevelExpander::BeginTransform();
 	//Clear the meshes
-
+	loader->clearMesh();
 	SectorSelection();
 	TerrainGeneration();
 	StructuresGeneration();
@@ -176,7 +176,7 @@ void LevelExpanderRotation::StructuresGeneration()
 	LevelExpander::StructuresGeneration();
 
 	structures = std::vector<Structure>();
-	std::vector<Structure> tmpStr = std::vector<Structure>();
+	std::vector<Structure*> tmpStr = std::vector<Structure*>();
 
 	for (int y = 0; y < loader->texHeight; y++)
 	{
@@ -207,11 +207,13 @@ void LevelExpanderRotation::StructuresGeneration()
 			if (BTP == STRUCTURE_BLOCK)
 			{
 				bool found = false;
-				for each (auto structure in tmpStr)
+				for each (Structure* structure in tmpStr)
 				{
-					if (structure.isNear(x, y))
+					if (structure->isNear(x, y))
 					{
-						structure.add(x, y);
+						structure->add(x, y);
+
+						structure->pixels.push_back(PixelBlock(Vector2(x, y), closestBlock));
 						found = true;
 						break;
 					}
@@ -259,24 +261,51 @@ void LevelExpanderRotation::StructuresGeneration()
 
 				if (!found)
 				{
-					Structure str = Structure(x, y);
-					str.pixels.push_back(Vector2(x, y));
+					Structure* str = new Structure(x, y);
+					str->pixels.push_back(PixelBlock(Vector2(x, y), closestBlock));
 					tmpStr.push_back(str);
 				}
 			}
 		}
 	}
 
-	int hi = 0;
+	for each (Structure* structure in tmpStr)
+	{
+		// create structure 3D dimensions
+		Vector3 pos = structure->center3D();
+		Vector3 dim = structure->size();
+		// for each structure determine suitable location along z axis
+		bool suitable = false;
+		int z = 0;
+		while (!suitable)
+		{
+			//Check wether the location is suitable
+			z = Random::Range(-loader->depth/2 + dim.GetZ(), loader->depth/2 - dim.GetZ());
+			suitable = true;
+			break;
+		}
 
-	     // create structure 3D dimensions
-	     // create structure Blocks
+		// calculate floor level
+		pos = Vector3(pos.GetX(), loader->getFloorLevel(pos.GetX(), z), z);
 
-	// for each structure determine suitable location along z axis
-	     // calculate floor level
-	
-    // create structure at position
+		Vector2 center = structure->center2D();
+		std::vector<Vector3> blocks;
 
+		// create structure Blocks
+		for each(auto pixel in structure->pixels)
+		{
+			for (int x = -dim.GetX()/2; x < dim.GetX()/2; x++)
+			{
+				for (int z = -dim.GetZ()/2; z < dim.GetZ()/2; z++)
+				{
+					if (pos.GetX() + x == pixel.pix.x || pos.GetX() + z == pixel.pix.x)
+					{
+						loader->setBlock(Vector3(pos.GetX() + x, pos.GetY() + (-(pixel.pix.y - center.y)), pos.GetZ() + z), pixel.blockType);
+					}
+				}
+			}
+		}
+	}
 }
 
 void LevelExpanderRotation::Flora()

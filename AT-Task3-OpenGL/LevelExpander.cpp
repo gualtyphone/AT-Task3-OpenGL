@@ -6,8 +6,8 @@ LevelExpander::LevelExpander(unsigned char * _pixels, VoxelLevelLoader* _loader)
 	: pixels(_pixels), loader(_loader)
 {
 	mapBlocks.push_back(new BlockInfo(Vector4(66.0f / 255.0f, 217.0f / 255.0f, 244.0f / 255.0f, 255.0f / 255.0f), 0, TRANSPARENT_BLOCK));
-	mapBlocks.push_back(new BlockInfo(Vector4(113.0f / 255.0f, 244.0f / 255.0f, 65.0f / 255.0f, 255.0f / 255.0f), 2, TERRAIN_BLOCK));
-	mapBlocks.push_back(new BlockInfo(Vector4(244.0f / 255.0f, 154.0f / 255.0f, 65.0f / 255.0f, 255.0f / 255.0f), 1, TERRAIN_BLOCK));
+	mapBlocks.push_back(new BlockInfo(Vector4(113.0f / 255.0f, 244.0f / 255.0f, 65.0f / 255.0f, 255.0f / 255.0f), 3, TERRAIN_BLOCK));
+	mapBlocks.push_back(new BlockInfo(Vector4(244.0f / 255.0f, 154.0f / 255.0f, 65.0f / 255.0f, 255.0f / 255.0f), 2, TERRAIN_BLOCK));
 	mapBlocks.push_back(new BlockInfo(Vector4(255.0f / 255.0f, 0.0f / 255.0f, 0.0f / 255.0f, 255.0f / 255.0f), 1, STRUCTURE_BLOCK));
 
 	currentStep = INITIALIZATION;

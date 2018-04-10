@@ -9,7 +9,7 @@ VoxelLevelLoader::VoxelLevelLoader(std::string filename, Shader * shader, Textur
 
 	levelExpander = new LevelExpanderRotation(pixels, this);
 
-	voxelBar = TwNewBar("Voxels");
+	/*voxelBar = TwNewBar("Voxels");
 	TwAddVarRW(voxelBar, "Seed", TW_TYPE_UINT16, &seed, "");
 	
 	TwAddSeparator(voxelBar, "Blocks Mapping", "");
@@ -22,7 +22,7 @@ VoxelLevelLoader::VoxelLevelLoader(std::string filename, Shader * shader, Textur
 		TwAddVarRW(voxelBar, block.c_str(), TW_TYPE_INT8, &pair->correspondingCube,  label.c_str());
 		TwAddVarRW(voxelBar, color.c_str(), TW_TYPE_COLOR4F, &pair->selectColor, label.c_str());
 		index++;
-	}
+	}*/
 
 }
 
@@ -116,6 +116,18 @@ int VoxelLevelLoader::getBlock(Vector3 pos)
 											int(floor(pos.GetZ())) % 16);
 
 	return chunks[chunkIndex]->GetCell(positionInChunk);
+}
+
+int VoxelLevelLoader::getFloorLevel(int x, int z)
+{
+	for (int y = texHeight; y > 0; y--)
+	{
+		if (getBlock(Vector3(x, y, z)) != 0)
+		{
+			return y;
+		}
+	}
+	return 0;
 }
 
 
